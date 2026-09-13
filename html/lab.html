@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小红书营销工坊｜牙韵新生</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="top-bar"><span>人工智能通识集中实践 · 2026</span><a href="learn.html">网上学习参考 →</a></div>
+  <header class="site-header">
+    <a class="brand" href="../index.html"><span class="brand-seal">牙</span><span><strong>牙韵新生</strong><small>DIGITAL HERITAGE LAB</small></span></a>
+    <button class="menu-toggle" aria-label="打开导航" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav-links">
+      <a href="../index.html" data-page="home">首页</a>
+      <a href="story.html" data-page="story">项目缘起</a>
+      <a href="craft.html" data-page="craft">技艺图典</a>
+      <a href="solutions.html" data-page="solutions">营销方案</a>
+      <a href="lab.html" data-page="lab">营销工坊</a>
+      <a href="video.html" data-page="video">影像志</a>
+      <a href="about.html" data-page="about">调研档案</a>
+      <a href="learn.html" data-page="learn">网上学习</a>
+    </nav>
+    <a class="nav-cta" href="lab.html">生成小红书素材 <span>↗</span></a>
+  </header>
+
+  <div class="page-banner" style="--banner-bg:url('../assets/images/shuaya-07-training.jpg')">
+    <div class="breadcrumb"><a href="../index.html">首页</a><span>/</span><a href="solutions.html">营销方案</a><span>/</span><span>小红书营销工坊</span></div>
+    <h1>手艺人的小红书营销工坊</h1>
+    <p>从拍摄一段原始素材开始，AI 帮你生成标题、正文、封面字与话题标签，再用一步一图的方式学会发布和复盘。</p>
+    <div class="ai-status" id="ai-status">正在检测大模型连接…</div>
+  </div>
+
+  <main class="section">
+    <div class="lab-brief">
+      <div class="lab-brief-main">
+        <div class="section-label">LAB BRIEFING</div>
+        <h2>把复杂营销拆成四个动作</h2>
+        <p>手艺人只需要会拍、会说，剩下的内容整理交给 AI：先把作品拍清楚，再生成一篇完整的小红书笔记，照着发布课堂完成上线，最后看数据决定下一篇拍什么。</p>
+        <p>本站不替手艺人虚构经历，也不把非遗变成猎奇内容。AI 输出需要本人确认，平台数据为课程演示数据；技艺表述可随时对照<a href="craft.html">技艺图典</a>。</p>
+        <div class="ref-strip">
+          <figure><img src="../assets/images/shuaya-06-closeup.jpg" alt=""><figcaption>参照 · 八牙控制</figcaption></figure>
+          <figure><img src="../assets/images/shuaya-01-ye.jpg" alt=""><figcaption>参照 · 十牙极限</figcaption></figure>
+          <figure><img src="../assets/images/shuaya-07-training.jpg" alt=""><figcaption>参照 · 传承培训</figcaption></figure>
+        </div>
+      </div>
+      <div class="lab-brief-side">
+        <h3>10 分钟上手路线</h3>
+        <ol>
+          <li>拍摄助手：检查光线、构图与主体清晰度</li>
+          <li>素材生成：输入一句话，生成整篇小红书笔记</li>
+          <li>平台课堂：学会注册、发布、回复与避坑</li>
+          <li>运营复盘：根据收藏、评论决定下期选题</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="lab-shell">
+      <div class="lab-tabs" role="tablist">
+        <button role="tab" aria-selected="true" data-tab="motion"><span>01</span>拍摄助手</button>
+        <button role="tab" aria-selected="false" data-tab="script"><span>02</span>素材生成</button>
+        <button role="tab" aria-selected="false" data-tab="qa"><span>03</span>平台课堂</button>
+        <button role="tab" aria-selected="false" data-tab="data"><span>04</span>运营复盘</button>
+      </div>
+
+      <div class="lab-panel active" id="panel-motion" role="tabpanel">
+        <div class="camera-wrap">
+          <video id="camera" autoplay playsinline muted></video>
+          <div class="camera-placeholder" id="camera-placeholder">
+            <div class="face-scan"><i></i></div>
+            <strong>拍摄检查待启动</strong>
+            <small>作品入镜 · 本地预览 · 不上传</small>
+          </div>
+          <canvas id="pose-overlay"></canvas>
+          <div class="camera-status"><i></i> AI VISION · DEMO</div>
+          <div class="scan-line"></div>
+        </div>
+        <div class="analysis-card">
+          <div class="panel-title"><div><small>实时预览 · 适合竖屏图文 / 短视频</small><h3>素材可用度</h3></div><strong id="score">--</strong></div>
+          <div class="metric"><div><span>光线充足度</span><b id="metric-one">等待检测</b></div><i><em id="bar-one"></em></i></div>
+          <div class="metric"><div><span>主体居中度</span><b id="metric-two">等待检测</b></div><i><em id="bar-two"></em></i></div>
+          <div class="metric"><div><span>画面稳定度</span><b id="metric-three">等待检测</b></div><i><em id="bar-three"></em></i></div>
+          <div class="ai-tip"><span>AI</span><p id="motion-tip">把作品放在窗边，背景尽量干净，镜头同时拍到手艺细节和制作者本人，更容易建立信任。</p></div>
+          <button class="panel-button" id="start-camera">打开相机检查画面 <span>→</span></button>
+          <small class="privacy-note">仅在本地调用摄像头，不采集或上传画面。评分用于演示拍摄检查流程。</small>
+        </div>
+      </div>
+
+      <div class="lab-panel" id="panel-script" role="tabpanel">
+        <div class="form-card">
+          <span class="step-badge">AI CREATOR</span>
+          <h3>小红书素材生成台 · 大模型</h3>
+          <p>输入作品和故事，AI 一次生成标题、正文、封面字、配图清单与话题标签；所有内容都可以复制后再人工修改。</p>
+          <div class="creator-tabs">
+            <button type="button" class="creator-tab active" data-creator="script">图文笔记</button>
+            <button type="button" class="creator-tab" data-creator="subtitle">封面文案</button>
+            <button type="button" class="creator-tab" data-creator="edit">发布清单</button>
+          </div>
+          <div class="creator-pane active" id="creator-script">
+            <label>这次想介绍什么<input id="script-topic" value="叶全民展示宁海平调耍牙，讲讲十颗牙背后的练习与传承"></label>
+            <div class="form-row">
+              <label>想吸引谁<select id="script-audience"><option>周末出游的年轻人</option><option>传统手艺爱好者</option><option>亲子家庭</option><option>本地文化观众</option></select></label>
+              <label>笔记长度<select id="script-duration"><option>精简 300 字</option><option>标准 500 字</option><option>故事型 800 字</option></select></label>
+            </div>
+            <button class="panel-button" id="generate-script">生成小红书整套素材 <span>✦</span></button>
+          </div>
+          <div class="creator-pane" id="creator-subtitle">
+            <label>作品亮点 / 你最想说的话<textarea id="subtitle-text" rows="5">耍牙不是为了吓人，它是宁海平调塑造角色的一套表演程式。叶全民把牙数推进到十颗，背后是多年练习，也是几代人的传承。</textarea></label>
+            <div class="form-row">
+              <label>表达风格<select id="subtitle-style"><option>真诚故事感</option><option>知识科普</option><option>年轻口语</option></select></label>
+              <label>封面字数<select id="subtitle-length"><option>12 字</option><option>8 字</option><option>15 字</option></select></label>
+            </div>
+            <button class="panel-button" id="generate-subtitle">生成标题与封面字 <span>⌁</span></button>
+          </div>
+          <div class="creator-pane" id="creator-edit">
+            <label>现有素材<input id="edit-brief" value="3 张制作过程照片 + 1 张成品照 + 1 段传承人口述"></label>
+            <label>发布形式<select id="edit-duration"><option>小红书图文</option><option>60 秒视频</option><option>图文 + 视频</option></select></label>
+            <button class="panel-button" id="generate-edit">生成发布前检查清单 <span>✓</span></button>
+            <small class="privacy-note">输出图片顺序、封面、定位、话题和发布前检查项，照着清单完成即可。</small>
+          </div>
+        </div>
+        <div class="result-card">
+          <div class="result-head"><span id="result-title">小红书笔记预览</span><button id="copy-script">复制全部</button></div>
+          <div id="script-result" class="script-empty"><div>✦</div><p>左侧输入一句作品介绍<br>AI 帮你整理成可发布素材</p></div>
+        </div>
+      </div>
+
+      <div class="lab-panel" id="panel-qa" role="tabpanel">
+        <div class="knowledge-side">
+          <span class="step-badge">PLATFORM CLASS</span>
+          <h3>小红书发布课堂</h3>
+          <p>不会用平台也没关系。点一个问题，就能得到只讲当前步骤的简单说明。</p>
+          <div class="topic-cloud">
+            <button>怎么注册账号</button><button>怎么发第一篇</button><button>图片怎么排序</button>
+            <button>标题怎么写</button><button>怎么加话题</button><button>怎么添加地点</button>
+            <button>评论怎么回复</button><button>什么时候发布</button><button>哪些词不能写</button>
+            <button>数据在哪里看</button><button>如何避免虚假宣传</button>
+          </div>
+        </div>
+        <div class="chat-card">
+          <div class="chat-messages" id="chat-messages">
+            <div class="chat ai"><span>AI</span><p>你好，我是手艺人平台助手。你可以直接点左侧问题，我会像操作说明书一样，一次只讲清一个步骤。</p></div>
+          </div>
+          <form class="chat-input" id="chat-form">
+            <input id="chat-question" autocomplete="off" placeholder="输入问题，例如：第一篇笔记怎么发布？">
+            <button aria-label="发送">↑</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="lab-panel" id="panel-copyright" role="tabpanel">
+        <div class="copyright-visual">
+          <div class="radar"><span></span><b>VIDEO<br>FINGERPRINT</b></div>
+          <h3>视频指纹监测</h3>
+          <p>上传真实耍牙表演视频，演示「画面 / 声音 / 关键帧」指纹比对。下方提供已下载的公开素材，可直接用于课程演示。</p>
+          <label class="upload-button">选择视频文件上传检测<input type="file" id="video-upload" accept="video/*"></label>
+          <div class="sample-videos">
+            <small>本机示例（B 站公开耍牙影像）</small>
+            <button type="button" class="sample-video-btn" data-sample="../assets/videos/shuaya-ye-quanmin-10ya.mp4" data-label="叶全民 · 十颗牙极限">使用：叶全民十颗牙</button>
+            <button type="button" class="sample-video-btn" data-sample="../assets/videos/shuaya-xue-qiaoping.mp4" data-label="薛巧萍 · 第六代传人">使用：薛巧萍传承</button>
+            <button type="button" class="sample-video-btn" data-sample="../assets/videos/shuaya-eight-fangs.mp4" data-label="经典造型 · 八颗獠牙">使用：八牙经典造型</button>
+            <a class="sample-open" href="../assets/videos/shuaya-ye-quanmin-10ya.mp4" download>下载叶全民视频</a>
+            <a class="sample-open" href="../assets/videos/shuaya-xue-qiaoping.mp4" download>下载薛巧萍视频</a>
+            <a class="sample-open" href="../assets/videos/shuaya-eight-fangs.mp4" download>下载八牙视频</a>
+          </div>
+        </div>
+        <div class="monitor-list">
+          <div class="monitor-head"><span>监测结果</span><small id="monitor-count">尚未开始</small></div>
+          <div id="monitor-results" class="monitor-empty"><div>⌁</div><p>上传作品或点击左侧示例视频后，将展示疑似搬运标题、平台来源与相似度。</p></div>
+        </div>
+      </div>
+
+      <div class="lab-panel" id="panel-data" role="tabpanel">
+        <div class="insight-shell">
+          <div class="insight-hero">
+            <div>
+              <span class="step-badge">XIAOHONGSHU REVIEW · 大模型可刷新</span>
+              <h3>发布后，下一篇拍什么？</h3>
+              <p>不用学复杂报表，只看收藏、评论和主页访问三个信号。系统把模拟数据翻译成下一篇选题，让手艺人知道哪些内容值得继续讲。</p>
+            </div>
+            <button class="panel-button insight-refresh" id="refresh-insight" type="button">大模型刷新洞察 <span>✦</span></button>
+          </div>
+
+          <div class="insight-layout">
+            <div class="insight-main">
+              <div class="insight-tip" id="insight-tip">
+                <b>AI 建议 · 默认策略</b>
+                <p id="insight-advice">收藏明显高于点赞，说明观众更需要“看得懂、能保存”的制作过程。下一篇建议拍一组「一件作品从材料到完成」的 6 图笔记，封面先放成品，正文再讲三个关键步骤，并在评论区邀请大家提问。</p>
+              </div>
+
+              <div class="insight-board" id="insight-board">
+                <article class="insight-chip">
+                  <strong>选题 A · 一件作品的诞生</strong>
+                  <span>用 6 张图记录材料、工具、制作细节和成品，最适合第一次发笔记，也容易获得收藏。</span>
+                </article>
+                <article class="insight-chip">
+                  <strong>选题 B · 手艺人的一天</strong>
+                  <span>不只拍成品，也拍准备、排练和收工，让观众记住做手艺的人，而不只是一个猎奇片段。</span>
+                </article>
+                <article class="insight-chip">
+                  <strong>选题 C · 一个细节讲明白</strong>
+                  <span>每篇只解释一个观众常问的问题，例如“牙为什么不会掉”，并明确危险动作不可自行模仿。</span>
+                </article>
+                <article class="insight-chip">
+                  <strong>选题 D · 来现场怎么看</strong>
+                  <span>介绍场馆、演出时间和观看提示，把线上兴趣引导到真实文化空间；发布前再次核对地点信息。</span>
+                </article>
+              </div>
+
+              <div class="insight-comments">
+                <h4>高频评论样本（模拟）</h4>
+                <ul id="insight-comments">
+                  <li>「想看从准备材料到上台的完整过程。」</li>
+                  <li>「这项手艺在哪里可以现场看到？」</li>
+                  <li>「能不能讲讲叶老师一天怎么练习？」</li>
+                  <li>「第一次知道它属于宁海平调，不只是绝技。」</li>
+                </ul>
+              </div>
+            </div>
+
+            <aside class="insight-side">
+              <div class="chart-card compact">
+                <div class="chart-head"><strong>观众兴趣分布</strong><small>模拟 · 近 30 天</small></div>
+                <div class="bars" id="insight-bars">
+                  <div style="--value:92%"><span>制作过程</span><i><em></em></i><b>92%</b></div>
+                  <div style="--value:84%"><span>细节特写</span><i><em></em></i><b>84%</b></div>
+                  <div style="--value:78%"><span>手艺人故事</span><i><em></em></i><b>78%</b></div>
+                  <div style="--value:71%"><span>使用场景</span><i><em></em></i><b>71%</b></div>
+                  <div style="--value:63%"><span>学徒日常</span><i><em></em></i><b>63%</b></div>
+                  <div style="--value:48%"><span>成品展示</span><i><em></em></i><b>48%</b></div>
+                </div>
+              </div>
+              <div class="insight-risk">
+                <h4>传播风险提示</h4>
+                <p>不要虚构传承年限、荣誉与销量，也不要只发危险动作特写。每篇至少保留人物/机构署名、文化背景与必要安全提示。</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-nav-row">
+      <a href="solutions.html">← 营销方案</a>
+      <a href="video.html">下一步：影像志 →</a>
+    </div>
+  </main>
+
+  <footer class="site-footer compact"><p>牙韵新生 · <a href="../index.html">返回首页</a></p></footer>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="../js/common.js"></script>
+  <script src="../js/qiniu-ai.js"></script>
+  <script src="../js/lab.js"></script>
+</body>
+</html>
